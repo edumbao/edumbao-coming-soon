@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Coming Soon | Ed Umbao</title>
+  <meta name="description" content="A new website by Ed Umbao is coming soon, featuring SEO resources, copywriting tools, and content workflows for SaaS and B2B growth." />
+
+  <style>
+    :root {
+      --bg: #070b16;
+      --bg-soft: #0b1020;
+      --panel: #111827;
+      --panel-2: #151f33;
+      --panel-3: #0f172a;
+      --border: #24324a;
+      --text: #eef4ff;
+      --muted: #9fb0c7;
+      --muted-2: #c4d1e4;
+      --blue: #3b82f6;
+      --green: #22c55e;
+      --cyan: #06b6d4;
+      --purple: #8b5cf6;
+      --shadow: rgba(0, 0, 0, 0.42);
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(59, 130, 246, 0.18), transparent 30%),
+        radial-gradient(circle at top right, rgba(34, 197, 94, 0.14), transparent 28%),
+        radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.10), transparent 35%),
+        var(--bg);
+      color: var(--text);
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(7, 11, 22, 0.72);
+      border-bottom: 1px solid rgba(36, 50, 74, 0.72);
+    }
+
+    .nav-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      box-shadow: 0 10px 24px rgba(59, 130, 246, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      color: white;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--text);
+    }
+
+    .nav-cta {
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: rgba(59, 130, 246, 0.12);
+      border: 1px solid rgba(59, 130, 246, 0.35);
+      color: #cfe1ff;
+      font-weight: 700;
+    }
+
+    .hero {
+      min-height: calc(100vh - 70px);
+      display: flex;
+      align-items: center;
+      padding: 80px 0 54px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      width: 100%;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.10);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+      color: #9ff0be;
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      font-size: clamp(42px, 6vw, 72px);
+      line-height: 0.98;
+      letter-spacing: -0.06em;
+      margin: 0 0 20px;
+    }
+
+    .hero-text {
+      color: var(--muted-2);
+      font-size: 19px;
+      max-width: 700px;
+      margin-bottom: 26px;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 26px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 18px;
+      border-radius: 14px;
+      border: 0;
+      font-size: 16px;
+      font-weight: 800;
+      cursor: pointer;
+      transition: transform 0.15s ease, opacity 0.15s ease, border 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      opacity: 0.96;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue), var(--green));
+      color: white;
+      box-shadow: 0 14px 30px rgba(59, 130, 246, 0.25);
+    }
+
+    .btn-secondary {
+      background: rgba(17, 24, 39, 0.85);
+      border: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .trust-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .trust-pill {
+      padding: 8px 11px;
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .preview-card {
+      position: relative;
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.025)),
+        var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: 0 24px 60px var(--shadow);
+      overflow: hidden;
+    }
+
+    .preview-card::before {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      background: radial-gradient(circle at top right, rgba(34, 197, 94, 0.25), transparent 34%);
+      pointer-events: none;
+    }
+
+    .preview-top {
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 22px;
+    }
+
+    .window-dots {
+      display: flex;
+      gap: 7px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #475569;
+    }
+
+    .dot:nth-child(1) { background: #ef4444; }
+    .dot:nth-child(2) { background: #f59e0b; }
+    .dot:nth-child(3) { background: #22c55e; }
+
+    .score-badge {
+      color: #bff7d1;
+      font-size: 13px;
+      font-weight: 800;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(34, 197, 94, 0.11);
+      border: 1px solid rgba(34, 197, 94, 0.25);
+    }
+
+    .mock-line {
+      position: relative;
+      height: 12px;
+      border-radius: 99px;
+      background: #263550;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+
+    .mock-line span {
+      display: block;
+      height: 100%;
+      border-radius: 99px;
+      background: linear-gradient(90deg, var(--blue), var(--green));
+    }
+
+    .mock-list {
+      position: relative;
+      margin-top: 22px;
+      display: grid;
+      gap: 12px;
+    }
+
+    .mock-item {
+      padding: 14px;
+      border-radius: 16px;
+      background: rgba(15, 23, 42, 0.78);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+    }
+
+    .mock-icon {
+      width: 30px;
+      height: 30px;
+      border-radius: 10px;
+      background: rgba(59, 130, 246, 0.18);
+      color: #bfdbfe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      font-weight: 800;
+    }
+
+    .mock-item strong {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .mock-item p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .section {
+      padding: 34px 0;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+      margin: 0 0 12px;
+    }
+
+    .section-subtitle {
+      color: var(--muted-2);
+      font-size: 17px;
+      max-width: 760px;
+      margin: 0 0 26px;
+    }
+
+    .tool-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .tool-card {
+      background:
+        linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02)),
+        var(--panel);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      box-shadow: 0 18px 44px rgba(0, 0, 0, 0.30);
+    }
+
+    .tool-icon {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      background: rgba(59, 130, 246, 0.15);
+      color: #bfdbfe;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 14px;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .tool-card h3 {
+      margin: 0 0 8px;
+      font-size: 22px;
+    }
+
+    .tool-card p {
+      color: var(--muted);
+      margin: 0 0 18px;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .step {
+      background: rgba(17, 24, 39, 0.70);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: var(--radius-md);
+      padding: 20px;
+    }
+
+    .step-number {
+      width: 34px;
+      height: 34px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(59,130,246,0.9), rgba(34,197,94,0.9));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .step h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .footer {
+      padding: 34px 0 46px;
+      color: var(--muted);
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 900px) {
+      .hero-grid,
+      .tool-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 52px 0 28px;
+      }
+
+      .preview-card,
+      .tool-card {
+        padding: 20px;
+      }
+
+      .btn {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#" class="brand">
+        <span class="brand-mark">↗</span>
+        <span>Ed Umbao</span>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#tools">Tools</a>
+        <a href="#coming">What’s coming</a>
+        <a href="#contact">Contact</a>
+        <a href="#tools" class="nav-cta">Open tools</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Portfolio coming soon</div>
+          <h1>SEO, copywriting, and content tools are on the way.</h1>
+
+          <p class="hero-text">
+            A new portfolio by Ed Umbao is being prepared. It will feature SEO resources,
+            copywriting tools, content workflows, and practical guides for SaaS and B2B growth.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#tools" class="btn btn-primary">Use free tools</a>
+            <a href="https://www.linkedin.com/in/ed-umbao/" class="btn btn-secondary" target="_blank" rel="noopener">Connect on LinkedIn</a>
+          </div>
+
+          <div class="trust-row">
+            <span class="trust-pill">SEO content strategy</span>
+            <span class="trust-pill">SaaS copywriting</span>
+            <span class="trust-pill">Free workflow tools</span>
+          </div>
+        </div>
+
+        <div class="preview-card">
+          <div class="preview-top">
+            <div class="window-dots">
+              <span class="dot"></span>
+              <span class="dot"></span>
+              <span class="dot"></span>
+            </div>
+            <span class="score-badge">Building now</span>
+          </div>
+
+          <div class="mock-line"><span style="width: 92%;"></span></div>
+          <div class="mock-line"><span style="width: 74%;"></span></div>
+          <div class="mock-line"><span style="width: 58%;"></span></div>
+
+          <div class="mock-list">
+            <div class="mock-item">
+              <div class="mock-icon">1</div>
+              <div>
+                <strong>Answer-based SEO planning</strong>
+                <p>Turn search questions into clearer article workflows.</p>
+              </div>
+            </div>
+
+            <div class="mock-item">
+              <div class="mock-icon">2</div>
+              <div>
+                <strong>Benefit-first copywriting</strong>
+                <p>Rewrite vague headlines into action-benefit messaging.</p>
+              </div>
+            </div>
+
+            <div class="mock-item">
+              <div class="mock-icon">3</div>
+              <div>
+                <strong>Practical SaaS content systems</strong>
+                <p>Build repeatable workflows for content that ranks and converts.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="section">
+      <div class="container">
+        <h2 class="section-title">Free SEO & Copywriting Tools</h2>
+        <p class="section-subtitle">
+          These free tools support my work as a copywriter and SEO specialist for SaaS companies.
+          Use them to plan articles, sharpen landing page copy, and turn messy ideas into clearer workflows.
+        </p>
+
+        <div class="tool-grid">
+          <div class="tool-card">
+            <div class="tool-icon">⌕</div>
+            <h3>Answer-Based SEO Article Planner</h3>
+            <p>
+              Turn a search question into a structured article planning prompt with audience,
+              angle, example, and CTA.
+            </p>
+            <a class="btn btn-primary" href="https://edumbao.github.io/answer-based-seo-planner/" target="_blank" rel="noopener">
+              Open SEO Planner
+            </a>
+          </div>
+
+          <div class="tool-card">
+            <div class="tool-icon">✦</div>
+            <h3>Benefit Headline Creator</h3>
+            <p>
+              Rewrite vague website headlines into clear action-benefit headlines that explain
+              what visitors do and what they get.
+            </p>
+            <a class="btn btn-primary" href="https://edumbao.github.io/benefit-headline-creator/" target="_blank" rel="noopener">
+              Open Headline Creator
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="coming" class="section">
+      <div class="container">
+        <h2 class="section-title">What’s coming next</h2>
+        <p class="section-subtitle">
+          The full website will include portfolio projects, SEO insights, SaaS content examples,
+          and practical resources for B2B growth.
+        </p>
+
+        <div class="steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3>Portfolio</h3>
+            <p>Selected projects connected to SEO, publishing, SaaS content, and free tools.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3>Insights</h3>
+            <p>Short articles on SEO content systems, Google Search Console, copywriting, and workflows.</p>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3>Services</h3>
+            <p>SEO consulting, SaaS ghostwriting, technical writing, and editorial workflows.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <div class="container">
+        <div class="tool-card">
+          <h2 class="section-title">Need help with SaaS SEO or copywriting?</h2>
+          <p class="section-subtitle">
+            Connect with me while the full website is being built.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://www.linkedin.com/in/ed-umbao/" class="btn btn-primary" target="_blank" rel="noopener">
+              Connect on LinkedIn
+            </a>
+            <a href="https://edumbao.github.io/" class="btn btn-secondary" target="_blank" rel="noopener">
+              View GitHub Portfolio
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        Copyright © 2026 Ed Umbao. All rights reserved.
+      </div>
+    </footer>
+  </main>
+</body>
+</html>
